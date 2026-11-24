@@ -1,0 +1,79 @@
+# ── Build output ─────────────────────────────────────────────────────────────
+bin/
+obj/
+.vs/
+*.user
+
+# ── GAME LOGS — NEVER COMMIT THESE ───────────────────────────────────────────
+# BepInEx's LogOutput.log contains the game's OWN TEXT, verbatim: the dialogue
+# this mod reads aloud, character names, item and menu strings. That is Konami's
+# copyrighted script, captured incidentally while testing, and it must not go
+# into a public repository. The copy in this folder holds 27 lines of the
+# Suikoden II opening plus several hundred UI strings.
+#
+# Logs are also how this project is debugged, so one will keep reappearing here.
+# Ignore the whole class rather than a single filename.
+*.log
+LogOutput.log
+out.txt
+nav_out.txt
+
+# ── Player data files ────────────────────────────────────────────────────────
+# Written next to the plugin at runtime, in BepInEx\plugins, so they normally
+# never appear here at all — but they get copied in for inspection. They are the
+# player's own discoveries (names they typed, exits they walked, places they
+# marked) and they are per-save and per-playthrough, so they are not project
+# state. They are designed to be SHAREABLE: if a curated starter set is ever
+# worth shipping, add it deliberately with `git add -f` under a different name
+# such as `examples/`, rather than letting a working copy drift into the repo.
+suikoden1_npc_names.txt
+suikoden1_exits.txt
+suikoden1_marks.txt
+suikoden1_places.txt
+suikoden1_npc_names.txt.old-autonamed
+suikoden1_collision_dump.txt
+suikoden2_npc_names.txt
+
+# ── Diagnostic dumps written by the mod (both games) ─────────────────────────
+# Written next to the plugin and copied out for analysis. They are built from the
+# running game and some carry its OWN TEXT verbatim - the Suikoden II F4 dump
+# (suikoden2_npcs_<map>.txt) writes every loaded text table, i.e. the script.
+# They belong in the ground-truth folder outside this repo, never in it. The
+# patterns are broad on purpose: a dump with a new name must not slip through.
+suikoden1_*.txt
+suikoden2_*.txt
+suikoden2_*.txt.*
+
+# ── Anything extracted from the game ─────────────────────────────────────────
+# The decompiled interop assemblies (GSD1.cs, GSD2.cs and friends) are derived
+# from the shipped game and belong nowhere near this repo. They live under the
+# game folder, not here, but this is a backstop in case one is ever copied in
+# for grepping. Same for any dumped assets.
+_decompiled/
+*.decompiled.cs
+# The game folder and its parts, should one ever be copied or linked in here,
+# and the ground-truth folder of dumps kept beside this repo.
+BepInEx/
+interop/
+*_Data/
+il2cpp_data/
+StreamingAssets/
+Suikoden-Access-groundtruth/
+*.exe
+*.pdb
+GSD1.cs
+GSD2.cs
+GSDShare.cs
+ShareUI.cs
+FrameWork.cs
+*.assets
+*.bundle
+*.dll
+
+# ── Screenshots and local reference material ─────────────────────────────────
+# Screenshots of the game or its install folder are the player's own reference,
+# not project state, and a screenshot of the running game would be game content.
+*.png
+*.jpg
+*.jpeg
+*.bmp

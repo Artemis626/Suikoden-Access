@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>SuikodenAccess</AssemblyName>
+    <Product>Suikoden Access</Product>
+    <Version>0.1.0</Version>
+
+    <!-- ***** EDIT THIS ONE LINE ***** -->
+    <!-- Full path to your game folder: the one containing the .exe and the BepInEx folder. -->
+    <GamePath>E:\SteamLibrary\steamapps\common\Suikoden I and II HD Remaster</GamePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SAPI fallback (Windows only). If restore fails, try a different version number. -->
+    <PackageReference Include="System.Speech" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Reference BepInEx core + HarmonyX + Il2CppInterop, and every game interop dll.
+         Wildcards mean you never name individual assemblies, and it survives updates.
+         Private=false keeps these OUT of the build output (we don't want to copy the game). -->
+    <Reference Include="$(GamePath)\BepInEx\core\*.dll" Private="false" />
+    <Reference Include="$(GamePath)\BepInEx\interop\*.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- After each build, copy the plugin (and the SAPI dll) into BepInEx\plugins so you can
+       just launch the game. Interop/core refs are Private=false, so they are NOT copied. -->
+  <Target Name="DeployToGame" AfterTargets="Build">
+    <ItemGroup>
+      <DeployFiles Include="$(OutDir)*.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DeployFiles)"
+          DestinationFolder="$(GamePath)\BepInEx\plugins"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>
