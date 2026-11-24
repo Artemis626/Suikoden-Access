@@ -158,6 +158,7 @@ Short list; [`ARCHITECTURE.md`](ARCHITECTURE.md) §4 has the reasons.
 | [`Suikoden-Access-PATHFINDING-HANDOFF-2026-09-16.md`](docs/Suikoden-Access-PATHFINDING-HANDOFF-2026-09-16.md) | §0, the observation-first method. Still binding. The rest is superseded by the GSD2 handoff |
 | [`Suikoden-Access-STATUS-2.md`](docs/Suikoden-Access-STATUS-2.md) | the shared UI layer: menus and battle, and §1, the method for finding a hook |
 | [`Suikoden-Access-TITLE-STATUS.md`](docs/Suikoden-Access-TITLE-STATUS.md) | the title screen, launcher and settings readers |
+| [`TEXT-HOOKING-HANDOFF.md`](docs/TEXT-HOOKING-HANDOFF.md) | **not specific to this game:** the dialogue, menu and battle hooking patterns written up for reuse in another Unity accessibility mod, with BepInEx-to-MelonLoader differences |
 
 **History** (in [`docs/history/`](docs/history/)), superseded and kept for the
 reasoning:

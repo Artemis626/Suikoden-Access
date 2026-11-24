@@ -199,6 +199,7 @@ SuikodenAccess.csproj
 tools/gsd2_score.py  offline scorer for Suikoden II walk dumps (reads dumps from outside the repo)
 docs/                the current design references, one per subsystem
 docs/history/        superseded working notes, kept for the reasoning
+docs/TEXT-HOOKING-HANDOFF.md  reusable guide: how to hook dialogue, menus and battle in another Unity game
 ```
 
 ## The one idea that solved the hard parts
