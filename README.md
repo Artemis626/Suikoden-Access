@@ -27,8 +27,8 @@ pathfinding to any of it.
 | Title screen, launcher, settings | ✅ | ✅ |
 | Save / load screens | ✅ | ✅ |
 | Character-name entry | ✅ | ✅ |
-| Battle menus and targeting | ✅ | ✅ |
-| Pause menu, top level | ✅ | ✅ |
+| Battle menus and targeting | ❔ untested | ✅ |
+| Pause menu | ⚠️ top level only | ⚠️ top level only |
 | Sub-menus, shops, storage | ❌ not read | ❌ not read |
 | Field target list (people, doors, objects) | ✅ full | ⚠️ people only |
 | Pathfinding to a target | ✅ | ✅ people only |
@@ -36,7 +36,7 @@ pathfinding to any of it.
 | Names the game supplies | ✅ characters and places | ❌ player-typed names only |
 | "Where am I" | ✅ | ❌ |
 
-✅ works in play · ⚠️ partial · ❌ not built
+✅ works in play · ⚠️ partial · ❔ built but never tested in play · ❌ not built
 
 Everything from v69 to v72 was built and compiles but was **never tested in
 play**. [`HANDOVER.md`](HANDOVER.md#1-first-session-back-check-these) lists the
@@ -49,7 +49,9 @@ checks for the first session.
 ### Both games: the shared UI layer
 
 The two games ship in one executable and share their menu and battle code, so
-everything here works in both.
+the same readers run in both. Two exceptions to "works in both": battle was
+only ever tested in Suikoden II, and the pause menu is only read at its top
+level.
 
 | Feature | What is spoken |
 |---|---|
@@ -58,8 +60,8 @@ everything here works in both.
 | **Title and launcher** | game selection, Gallery, Language, both Settings pages (name, description and value as one sentence; sliders as "7 of 10") |
 | **Save / load** | slot contents, overwrite confirmations, the highlighted option |
 | **Name entry** | the letter grid, capitals, and the confirmation |
-| **Battle** | battle start, the command row and its sub-menus, quantities, enemy targeting with duplicates numbered, item descriptions, whose turn it is, the end-of-battle box |
-| **Pause menu** | the command column and the party rows |
+| **Battle** (tested in Suikoden II only; untested in Suikoden I) | battle start, the command row and its sub-menus, quantities, enemy targeting with duplicates numbered, item descriptions, whose turn it is, the end-of-battle box |
+| **Pause menu** (partial) | the command column and the party rows; nothing below the top level |
 | **Loading** | "Now loading", once, when a save starts to load |
 
 ### Suikoden I: field navigation (complete)

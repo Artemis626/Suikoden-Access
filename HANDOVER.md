@@ -19,7 +19,9 @@ Read in this order:
 
 | Area | State |
 |---|---|
-| **Shared UI, both games**: dialogue, choices, title and launcher, settings, save/load, name entry, battle, pause menu (top level), "Now loading" | Works, and was used in play |
+| **Shared UI, both games**: dialogue, choices, title and launcher, settings, save/load, name entry, "Now loading" | Works, and was used in play |
+| **Battle** | Works in Suikoden II. **Never tested in Suikoden I**: the code is shared, but nobody has played a Suikoden I battle with it |
+| **Pause menu, both games** | Partial: the command column and party rows are read; nothing below the top level |
 | **Suikoden I navigation**: target list, A\*, exits with destinations, self-naming landmarks, character and place names, marks, "where am I" | Complete, and was used daily |
 | **Suikoden II navigation**: collision solved; 8-way A\* to the people on screen; `Shift+K` naming | Works for people (tested in v66–v67). Doors, exits, objects, places and game-supplied names are not built |
 | **v69 to v72** | **Built and compiles, never run in play.** See §1 |
@@ -46,6 +48,8 @@ building anything new, run one session and check:
    rebuild was throttled in v71).
 7. Switching games through the launcher: only the game you are in responds to
    `J` / `K` / `L` / `P`.
+8. A Suikoden I battle, which has never been tested at all: commands, items,
+   targets, whose turn it is, and the end-of-battle box.
 
 Details of what changed in each of those builds:
 [`docs/Suikoden-Access-GSD2-HANDOFF-2026-09-23.md`](docs/Suikoden-Access-GSD2-HANDOFF-2026-09-23.md) §17–§18.
